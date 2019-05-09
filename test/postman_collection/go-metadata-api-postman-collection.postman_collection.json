@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "d464d6a3-1707-4bed-b4f7-b7a1bc534143",
+		"name": "go-metadata-api-postman-collection",
+		"description": "Sample Requests for go-metadata-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST: /application 1",
+			"request": {
+				"auth": {
+					"type": "awsv4"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "title: Valid App 1\nversion: 0.0.1\nmaintainers:\n- name: firstmaintainer app1\n  email: firstmaintainer@hotmail.com\n- name: secondmaintainer app1\n  email: secondmaintainer@gmail.com\ncompany: Random Inc.\nwebsite: https://website.com\nsource: https://github.com/random/repo\nlicense: Apache-2.0\ndescription: |\n ### Interesting Title\n Some application content, and description"
+				},
+				"url": {
+					"raw": "https://localhost:4200/application",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"application"
+					]
+				},
+				"description": "POST: /application\nApplication 1"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT: /application 1 update",
+			"request": {
+				"auth": {
+					"type": "awsv4"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "title: Valid App 34\nversion: 0.0.1\nmaintainers:\n- name: firstmaintainer app1\n  email: firstmaintainer@hotmail.com\n- name: secondmaintainer app1\n  email: secondmaintainer@gmail.com\ncompany: Random Inc.\nwebsite: https://website.com\nsource: https://github.com/random/repo\nlicense: Apache-2.0\ndescription: |\n ### Interesting Title\n Some application content, and description"
+				},
+				"url": {
+					"raw": "https://localhost:4200/application/c950801a-19ea-46ed-8ff3-22bd0f98a597",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"application",
+						"c950801a-19ea-46ed-8ff3-22bd0f98a597"
+					]
+				},
+				"description": "POST: /application\nApplication 1"
+			},
+			"response": []
+		},
+		{
+			"name": "POST: /application 1 Missing Version",
+			"request": {
+				"auth": {
+					"type": "awsv4"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "title: Valid App 1\nversion:\nmaintainers:\n- name: firstmaintainer app1\n  email: firstmaintainer@hotmail.com\n- name: secondmaintainer app1\n  email: secondmaintainer@gmail.com\ncompany: Random Inc.\nwebsite: https://website.com\nsource: https://github.com/random/repo\nlicense: Apache-2.0\ndescription: |\n ### Interesting Title\n Some application content, and description"
+				},
+				"url": {
+					"raw": "https://localhost:4200/application",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"application"
+					]
+				},
+				"description": "POST: /application\nApplication 1"
+			},
+			"response": []
+		},
+		{
+			"name": "POST: /application 2",
+			"request": {
+				"auth": {
+					"type": "awsv4"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "title: Valid App 2\nversion: 1.0.1\nmaintainers:\n- name: AppTwo Maintainer\n  email: apptwo@hotmail.com\ncompany: company Inc.\nwebsite: https://company.io\nsource: https://github.com/company/repo\nlicense: Apache-2.0\ndescription: |\n ### Why app 2 is the best\n Because it simply is..."
+				},
+				"url": {
+					"raw": "https://localhost:4200/application",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"application"
+					]
+				},
+				"description": "POST: /application\nApplication 2"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /application/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "awsv4"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://localhost:4200/application/961c4f40-779d-49a9-9efb-89f316d6b3d2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"application",
+						"961c4f40-779d-49a9-9efb-89f316d6b3d2"
+					]
+				},
+				"description": "GET: /application/:id\nGET an application from the API\n\nMust replace guid in URL"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /applications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:4200/application",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"application"
+					]
+				},
+				"description": "GET: /applications\n\nReturns the list of applications currently in memory"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE: /application/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:4200/application/961c4f40-779d-49a9-9efb-89f316d6b3d2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"application",
+						"961c4f40-779d-49a9-9efb-89f316d6b3d2"
+					]
+				},
+				"description": "DELETE: /application/{id}\n\nDeletes an application if it exists in database"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:4200/health",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"health"
+					]
+				},
+				"description": "GET: /health\nprovides heartbeat endpoint for monitoring"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /application/search Title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:4200/application/search/?title=asdfasdfasdfasdf",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"application",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "asdfasdfasdfasdf"
+						}
+					]
+				},
+				"description": "GET:\n/application/search"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /application/search Company",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:4200/application/search/?maintainer=secondmaintainer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"application",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "maintainer",
+							"value": "secondmaintainer"
+						}
+					]
+				},
+				"description": "GET:\n/application/search"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "3e45017d-9a3e-4acb-9782-2526ea929616",
+			"key": "baseUrl",
+			"value": "localhost:4200",
+			"type": "string"
+		}
+	]
+}
